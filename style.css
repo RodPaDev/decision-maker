@@ -1,1 +1,33 @@
+ *{
+     box-sizing: border-box;
+ }
+
+ .questionContainer{
+    padding: 15px;
+    border: 2px solid black;
+    width: 400px;
+    border-radius: 5px;
+ }
+
+ .question{
+     display: inline;
+     font-size: 20px;
+ }
+
+#input{
+     border: 1px solid grey;
+     width: 250px;
+ }
  
+ button{
+     padding: 5px;
+     height: 48px;
+     font-size: 15px;
+     font-weight: bold;
+     margin: 5px;
+     width: 167px;
+ }
+
+ #reset{
+    width: 350px;
+ }

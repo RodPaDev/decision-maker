@@ -2,7 +2,6 @@ let currentRandomNumber = 0;
 let allRandomNumbers = [];
 let averageRandomNumbers = 0;
 /** HTML INTERACTION VARIABLES**/
-
 let clicksHtml = document.getElementById("clicks");
 let displayInputHtml = document.getElementById("displayInput");
 let percentageHtml = document.getElementById("percentage");
@@ -20,8 +19,12 @@ function getRandomNumber() {
 }
 /** Displays the values on the webpage**/
 function displayOnWebpage(){
-    inputHtml = document.getElementById("input").value;
-    displayInputHtml.textContent = inputHtml;
+    let inputHtml = document.getElementById("input").value;
+    if (inputHtml === "" ){
+        displayInputHtml.textContent = "do it";
+    } else {
+        displayInputHtml.textContent = inputHtml;
+    }
     percentageHtml.textContent = currentRandomNumber;
     avgHtml.textContent = averageRandomNumbers;
     clicksHtml.textContent = allRandomNumbers.length;
@@ -64,8 +67,8 @@ function resetValues(){
     currentRandomNumber = 0;
     allRandomNumbers = [];
     averageRandomNumbers = 0;
-    finalHtml.textContent = "";
     displayOnWebpage();
+    resetMessage();
     console.log("Reseted Current Random Number: " + currentRandomNumber);
     console.log("Reseted Random Numbers Array: " + allRandomNumbers)
     console.log("Reseted Average of Array: " + averageRandomNumbers)
@@ -85,4 +88,9 @@ function displayMessage(){
     }else if (averageRandomNumbers < 50){
         finalHtml.textContent = "No, but you really shouldn't ask a computer for advice..."
     }
+}
+
+function resetMessage(){
+    displayInputHtml.textContent = "do it"
+    finalHtml.textContent = ""
 }

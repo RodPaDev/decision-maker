@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+        <link href="./style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <div>
-            <form>
-                <input type="text" id="input" required>
-                <button type="submit" onclick="decide();">Decide Once</button>
-                <button type="submit" onclick="bulkDecide();">Decide 100 times</button>
-                <button type="submit" onclick="resetValues();">RESET</button>
-            </form>
-            <h2>Decisions Made: <span id="clicks">0</span></h2>
-            <p>You're hesitating if you should <span id="displayInput"></span>,
-            there are <span id="percentage">0</span>% of it being a bad choice.</p>
-            <p>The average percentage of your decisions is : <span id="avg">0</span>%</p>
-            <h2>Probabilities are telling you : <span id="final"></span></h1>
+            <h1>Decision Maker</h1>
+            <div class="questionContainer">
+                <center>
+                    <form>
+                    <p class="question">Should I</p>
+                        <input type="text" id="input" class="question" ><p class="question">  ?</p>
+                        <button type="button" onclick="decide();">Decide Once</button>
+                        <button type="button" onclick="bulkDecide();">Decide 100x</button>
+                        <button type="reset" id="reset" onclick="resetValues();">Reset</button>
+                    </form>
+                </center>
+            </div>
+            <div>
+                <h2>Decisions Made: <span id="clicks">0</span></h2>
+                <p>You're hesitating if you should <span id="displayInput">do it</span>,
+                there are <span id="percentage">0</span>% of it being a bad choice.</p>
+                <p>The average percentage of your decisions is : <span id="avg">0</span>%</p>
+                <h2>Probabilities are telling you : <span id="final"></span></h1>
+            </div>
         </div>
         <script src="script.js" type="text/javascript"></script>
     </body>
