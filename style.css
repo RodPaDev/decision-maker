@@ -22,10 +22,22 @@
  button{
      padding: 5px;
      height: 48px;
-     font-size: 15px;
-     font-weight: bold;
      margin: 5px;
      width: 167px;
+     border-radius: 5px;
+     font-family: arial, sans-serif;
+     font-weight: bold;
+     font-size: 13px;
+     color :#757575;
+     border: 1px solid #f2f2f2;
+     background-color: #f2f2f2;
+ }
+
+ button:hover{
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0, 0 ,0 ,0.1);
+    border-radius: 2px;
+    cursor: pointer;
  }
 
  #reset{
