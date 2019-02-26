@@ -54,3 +54,24 @@
  #reset{
     width: 350px;
  }
+
+ a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+a:hover{
+    color: rgb(255, 165, 0);
+    transition: all 0.4s;
+}
+
+.link{
+    background-color: hsl(0, 2%, 91%);
+    height: 25px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
