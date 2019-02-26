@@ -48,10 +48,6 @@ function decide(){
     calculateAverage();
     displayOnWebpage();
     displayMessage();
-    console.log("Current Random Number: " + currentRandomNumber);
-    console.log("Random Numbers Array: " + allRandomNumbers)
-    console.log("Average of Array: " + averageRandomNumbers)
-    console.log("Times Decided: " + allRandomNumbers.length)
 }
 /** onclick function executes code 100x**/
 function bulkDecide(){
@@ -60,7 +56,6 @@ function bulkDecide(){
         decide();
     }
     i = 0;
-    console.log("Bulk times decided: " + allRandomNumbers.length)
 }
 /** Resets all values to 0 **/
 function resetValues(){
@@ -69,12 +64,7 @@ function resetValues(){
     averageRandomNumbers = 0;
     displayOnWebpage();
     resetMessage();
-    console.log("Reseted Current Random Number: " + currentRandomNumber);
-    console.log("Reseted Random Numbers Array: " + allRandomNumbers)
-    console.log("Reseted Average of Array: " + averageRandomNumbers)
-    console.log("Reseted Times Decided: " + allRandomNumbers.length)
 }
-console.log("array: " + probability);
 /** Displays Messages based on average **/
 function displayMessage(){
     if (averageRandomNumbers === 50){
@@ -89,7 +79,7 @@ function displayMessage(){
         finalHtml.textContent = "No, but you really shouldn't ask a computer for advice..."
     }
 }
-
+/** Resets both messages **/
 function resetMessage(){
     displayInputHtml.textContent = "do it"
     finalHtml.textContent = ""
