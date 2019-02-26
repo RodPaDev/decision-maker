@@ -1,12 +1,15 @@
  *{
      box-sizing: border-box;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  }
 
  .questionContainer{
     padding: 15px;
-    border: 2px solid black;
+    border: 1px solid rgb(175, 175, 175, 0.2);
+    border-radius: 2px;
     width: 400px;
     border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16);
  }
 
  .question{
@@ -15,9 +18,17 @@
  }
 
 #input{
-     border: 1px solid grey;
+     border: 1px solid rgb(175, 175, 175, 0.2);
+     border-radius: 2px;
      width: 250px;
+     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.16);
+     margin-bottom: 5px;
  }
+
+ #input:hover{
+    border: 1px solid rgb(175, 175, 175, 0.2);
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+}
  
  button{
      padding: 5px;
@@ -27,7 +38,7 @@
      border-radius: 5px;
      font-family: arial, sans-serif;
      font-weight: bold;
-     font-size: 13px;
+     font-size: 16px;
      color :#757575;
      border: 1px solid #f2f2f2;
      background-color: #f2f2f2;
