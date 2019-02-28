@@ -9,40 +9,40 @@ let avgHtml = document.getElementById("avg");
 let finalHtml = document.getElementById("final");
 /** Creates an array from 0-100 **/
 let probability = [];
-for (let i = 0; i <= 100; i++ ){
+for (let i = 0; i <= 100; i++) {
     probability.push(i)
 }
 /** Chooses a random number from the array above */
 function getRandomNumber() {
-	randomNumber = probability[Math.floor(Math.random() * probability.length)];
+    randomNumber = probability[Math.floor(Math.random() * probability.length)];
     return currentRandomNumber = randomNumber
 }
 /** Displays the values on the webpage**/
-function displayOnWebpage(){
+function displayOnWebpage() {
     let inputHtml = document.getElementById("input").value;
-    if (inputHtml === "" ){
-        displayInputHtml.textContent = "do it";
+    if (inputHtml === "") {
+        displayInputHtml.textContent = "do it,";
     } else {
         displayInputHtml.textContent = inputHtml;
     }
-    percentageHtml.textContent = currentRandomNumber;
-    avgHtml.textContent = averageRandomNumbers;
+    percentageHtml.textContent = currentRandomNumber + "%";
+    avgHtml.textContent = averageRandomNumbers + "%";
     clicksHtml.textContent = allRandomNumbers.length;
 }
 /** Pushes the current random number into an array**/
-function pushToArray(){
+function pushToArray() {
     allRandomNumbers.push(currentRandomNumber);
 }
 /** Calculates the average of the array**/
-function calculateAverage(){
+function calculateAverage() {
     let total = 0;
-    for(i = 0; i < allRandomNumbers.length; i++){
+    for (i = 0; i < allRandomNumbers.length; i++) {
         total = total + allRandomNumbers[i]
     }
     averageRandomNumbers = Math.round(total / allRandomNumbers.length);
 }
 /** onclick function executes code once**/
-function decide(){
+function decide() {
     getRandomNumber();
     pushToArray();
     calculateAverage();
@@ -50,15 +50,15 @@ function decide(){
     displayMessage();
 }
 /** onclick function executes code 100x**/
-function bulkDecide(){
+function bulkDecide() {
     let i
-    for (i = 0; i < 100; i++){
+    for (i = 0; i < 100; i++) {
         decide();
     }
     i = 0;
 }
 /** Resets all values to 0 **/
-function resetValues(){
+function resetValues() {
     currentRandomNumber = 0;
     allRandomNumbers = [];
     averageRandomNumbers = 0;
@@ -66,21 +66,35 @@ function resetValues(){
     resetMessage();
 }
 /** Displays Messages based on average **/
-function displayMessage(){
-    if (averageRandomNumbers === 50){
+function displayMessage() {
+    if (averageRandomNumbers === 50) {
         finalHtml.textContent = "50/50 chance... Take Risks or Don't..."
-    } else if (averageRandomNumbers === 0 || averageRandomNumbers <= 2 ){
+    } else if (averageRandomNumbers === 0 || averageRandomNumbers <= 2) {
         finalHtml.textContent = "Chances are very very slim, stop!"
-    }else if (averageRandomNumbers === 100 || averageRandomNumbers >= 98 ){
+    } else if (averageRandomNumbers === 100 || averageRandomNumbers >= 98) {
         finalHtml.textContent = "Chances are very high! Dive in!"
-    }else if (averageRandomNumbers > 50){
+    } else if (averageRandomNumbers > 50) {
         finalHtml.textContent = "What are you waiting for? Go for it!"
-    }else if (averageRandomNumbers < 50){
+    } else if (averageRandomNumbers < 50) {
         finalHtml.textContent = "No, but you really shouldn't ask a computer for advice..."
     }
 }
 /** Resets both messages **/
-function resetMessage(){
-    displayInputHtml.textContent = "do it"
+function resetMessage() {
+    displayInputHtml.textContent = "do it,"
     finalHtml.textContent = ""
+}
+/** Changes Css Applied in page**/
+function changeStyle() {
+    let styleHtml = document.getElementById("style")
+    let changeStyleHtml = document.getElementById("changeStyle")
+    if (styleHtml.href.match("light.css")) {
+        styleHtml.href = "dark.css"
+        changeStyleHtml.src = "./images/light.png"
+        changeStyleHtml.alt = "switch to light mode"
+    } else {
+        styleHtml.href = "light.css"
+        changeStyleHtml.src = "./images/dark.png"
+        changeStyleHtml.alt = "switch to dark mode"
+    }
 }
